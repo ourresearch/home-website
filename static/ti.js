@@ -625,7 +625,7 @@ angular.module("header.tpl.html", []).run(["$templateCache", function($templateC
   $templateCache.put("header.tpl.html",
     "<div class=\"navbar\">\n" +
     "    <a href=\"/\">\n" +
-    "        <img id=\"logo\" src=\"static/img/logo.png\" alt=\"\">\n" +
+    "        <img id=\"logo\" src=\"static/img/impactstory-logo-sideways.png\" alt=\"\">\n" +
     "    </a>\n" +
     "    <div class=\"spacer\"></div>\n" +
     "\n" +
@@ -634,6 +634,7 @@ angular.module("header.tpl.html", []).run(["$templateCache", function($templateC
     "    </a>\n" +
     "    -->\n" +
     "\n" +
+    "    <!--\n" +
     "    <div class=\"links\">\n" +
     "        <a href=\"/\" class=\"install\" hide show--gt-xs>\n" +
     "            <i class=\"fa fa-plus-circle\"></i>\n" +
@@ -649,6 +650,7 @@ angular.module("header.tpl.html", []).run(["$templateCache", function($templateC
     "        </a>\n" +
     "\n" +
     "    </div>\n" +
+    "    -->\n" +
     "\n" +
     "\n" +
     "\n" +
@@ -665,52 +667,20 @@ angular.module("landing.tpl.html", []).run(["$templateCache", function($template
     "        <div class=\"main-copy\">\n" +
     "            <div class=\"tagline\">\n" +
     "                <div class=\"above\">\n" +
-    "                    Read paywalled research papers for free.\n" +
+    "                    We make tools to power the Open Science revolution.\n" +
     "                </div>\n" +
     "            </div>\n" +
     "            <div class=\"about\">\n" +
-    "                Click the green tab and skip the paywall.\n" +
-    "                It's fast, free, and legal, powered by\n" +
-    "                our database of millions of author-uploaded PDFs.\n" +
-    "            </div>\n" +
-    "\n" +
-    "            <div class=\"cta\">\n" +
-    "\n" +
-    "                <div class=\"button-info\" ng-show=\"browser=='unsupported'\">\n" +
-    "                    Unpaywall works with Firefox or Chrome on\n" +
-    "                    your desktop computer.\n" +
-    "                    Click below to send yourself a reminder to install\n" +
-    "                    Unpaywall later:\n" +
-    "                </div>\n" +
-    "\n" +
-    "                <div class=\"button-info\" ng-show=\"browser != 'unsupported'\">\n" +
-    "                    Free for Chrome and Firefox\n" +
-    "                </div>\n" +
-    "\n" +
-    "                <div class=\"install\" ng-click=\"ctaClick()\">\n" +
-    "                    <span class=\"chrome\" ng-show=\"browser=='chrome'\">\n" +
-    "                        <i class=\"fa fa-plus\"></i>\n" +
-    "                        Add Unpaywall to Chrome\n" +
-    "                    </span>\n" +
-    "                    <span class=\"firefox\" ng-show=\"browser=='firefox'\">\n" +
-    "                        <i class=\"fa fa-plus\"></i>\n" +
-    "                        Add Unpaywall to Firefox\n" +
-    "                        <span class=\"small\">on the Firefox web store</span>\n" +
-    "                    </span>\n" +
-    "                    <span class=\"fallback\" ng-show=\"browser=='unsupported'\">\n" +
-    "                        <i class=\"fa fa-envelope-o\"></i>\n" +
-    "                        Send myself a reminder\n" +
-    "                    </span>\n" +
-    "                </div>\n" +
+    "                We're a nonprofit obsessed with making scholarly research more\n" +
+    "                open, accessible, and reusable. We create and support free services including\n" +
+    "                <a href=\"http://unpaywall.org\">Unpaywall,</a>\n" +
+    "                <a href=\"http://oadoi.org\">oaDOI,</a>\n" +
+    "                <a href=\"http://profiles.impactstory.org\">Impactstory Profiles,</a> and\n" +
+    "                <a href=\"http://depsy.org\">Depsy.</a>\n" +
     "            </div>\n" +
     "\n" +
     "\n" +
     "        </div>\n" +
-    "\n" +
-    "        <div class=\"main-img\">\n" +
-    "            <img src=\"static/img/screenshot.png\" alt=\"\">\n" +
-    "        </div>\n" +
-    "\n" +
     "\n" +
     "\n" +
     "\n" +
@@ -721,24 +691,22 @@ angular.module("landing.tpl.html", []).run(["$templateCache", function($template
     "                    <i class=\"fa fa-envelope-o\"></i>\n" +
     "                    Email\n" +
     "                </a>\n" +
-    "                <a href=\"http://twitter.com/unpaywall\">\n" +
+    "                <a href=\"http://twitter.com/impactstory\">\n" +
     "                    <i class=\"fa fa-twitter\"></i>\n" +
     "                    Twitter\n" +
     "                </a>\n" +
-    "                <a href=\"https://github.com/Impactstory/unpaywall\">\n" +
+    "                <a href=\"https://github.com/Impactstory\">\n" +
     "                    <i class=\"fa fa-github\"></i>\n" +
     "                    GitHub\n" +
     "                </a>\n" +
-    "                <a href=\"/faq\">\n" +
-    "                    <i class=\"fa fa-question-circle\"></i>\n" +
-    "                    FAQ\n" +
-    "                </a>\n" +
     "            </div>\n" +
+    "            <!--\n" +
     "            <div class=\"spacer\"></div>\n" +
     "            <div class=\"by\">\n" +
     "                Made with <i class=\"fa fa-heart\"></i> by\n" +
     "                <a href=\"/faq#who-is-behind-this\">Impactstory.</a>\n" +
     "            </div>\n" +
+    "            -->\n" +
     "        </div>\n" +
     "    </div>\n" +
     "\n" +

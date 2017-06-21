@@ -78,6 +78,9 @@ body {
       font-size: 16px;
       padding: 10px 20px;
     }
+    img#logo {
+      width: 200px;
+    }
   }
 }
 
@@ -193,6 +196,11 @@ div.page.landing {
         135deg,
         @gradientTop, @gradientBottom
       );
+
+      background-image: none;
+      background: #333;
+
+
       display:flex;
       justify-content: center;
       align-items: center;
@@ -222,7 +230,7 @@ div.page.landing {
 
 
       .main-copy {
-        max-width: 400px;
+        max-width: 800px;
         padding: 10px;
         margin-top: -10px;
         font-size: 24px;
@@ -232,7 +240,7 @@ div.page.landing {
         }
         div.tagline {
           font-weight: 300;
-          font-size: 200%;
+          font-size: 260%;
           color: #fff;
           @media @xs {
             font-size: 30px;
@@ -262,54 +270,6 @@ div.page.landing {
           margin-bottom: 80px;
         }
 
-        .cta {
-          margin-left: -10px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          
-          .button-info {
-            color: #FFEE58;
-            color: #FFF59D;
-            text-align: center;
-            padding-bottom: 10px;
-            font-size: 16px;
-
-          }
-          
-          .install {
-            cursor: pointer;
-            font-size: 20px;
-            padding: 24px 40px;
-            border-radius: 50px;
-
-            background: #FFEE58;
-            color: #333;
-
-            //background: none;
-            //border: 3px solid #fff;
-            //color: #fff;
-
-            transition: all 0.15s ease;
-            &:hover {
-              transform: scale(1.03125);
-            }
-
-            .small {
-              font-size: 66%;
-              margin-top: 3px;
-              display: block;
-              text-align: center;
-            }
-
-            @media @xs {
-              padding: 14px 20px;
-              font-size: 16px;
-            }
-
-          }
-        }
 
 
 
