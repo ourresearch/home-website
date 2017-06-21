@@ -44,9 +44,26 @@ def do_before_request():
 
 
 
+
+
+
+
+
+
+
 @app.route("/<path:page>")  # from http://stackoverflow.com/a/14023930/226013
 @app.route("/")
 def index_endpoint(path="index", page=""):
+
+    url_slugs_to_stay_here = [
+        "",
+        "media",
+        "team"
+    ]
+    if page.lower() not in url_slugs_to_stay_here:
+        return redirect(u"https://profiles.impactstory.org/{}".format(page.strip()), code=302)
+
+
     return render_template(
         'index.html'
     )
