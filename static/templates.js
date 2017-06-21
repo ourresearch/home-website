@@ -209,7 +209,7 @@ angular.module("header.tpl.html", []).run(["$templateCache", function($templateC
   $templateCache.put("header.tpl.html",
     "<div class=\"navbar\">\n" +
     "    <a href=\"/\">\n" +
-    "        <img id=\"logo\" src=\"static/img/impactstory-logo-sideways.png\" alt=\"\">\n" +
+    "        <img id=\"logo\" src=\"static/img/logo-white.png\" alt=\"\">\n" +
     "    </a>\n" +
     "    <div class=\"spacer\"></div>\n" +
     "\n" +
@@ -255,12 +255,26 @@ angular.module("landing.tpl.html", []).run(["$templateCache", function($template
     "                </div>\n" +
     "            </div>\n" +
     "            <div class=\"about\">\n" +
-    "                We're a nonprofit obsessed with making scholarly research more\n" +
+    "                Impactstory is a nonprofit obsessed with making scholarly research more\n" +
     "                open, accessible, and reusable. We create and support free services including\n" +
     "                <a href=\"http://unpaywall.org\">Unpaywall,</a>\n" +
     "                <a href=\"http://oadoi.org\">oaDOI,</a>\n" +
     "                <a href=\"http://profiles.impactstory.org\">Impactstory Profiles,</a> and\n" +
     "                <a href=\"http://depsy.org\">Depsy.</a>\n" +
+    "            </div>\n" +
+    "            <div class=\"links\">\n" +
+    "                <a href=\"mailto:team@impactstory.org\">\n" +
+    "                    <i class=\"fa fa-envelope-o\"></i>\n" +
+    "                    Email\n" +
+    "                </a>\n" +
+    "                <a href=\"http://twitter.com/impactstory\">\n" +
+    "                    <i class=\"fa fa-twitter\"></i>\n" +
+    "                    Twitter\n" +
+    "                </a>\n" +
+    "                <a href=\"https://github.com/Impactstory\">\n" +
+    "                    <i class=\"fa fa-github\"></i>\n" +
+    "                    GitHub\n" +
+    "                </a>\n" +
     "            </div>\n" +
     "\n" +
     "\n" +
