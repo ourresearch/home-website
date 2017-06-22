@@ -55,6 +55,8 @@ angular.module('app').run(function($route,
     ga('create', 'UA-23384030-6', 'auto');
     $rootScope.ga = ga
 
+    console.log("running homepage!")
+
 
 
     $rootScope.$on('$routeChangeStart', function(next, current){
@@ -130,6 +132,13 @@ angular.module('app').controller('AppCtrl', function(
             );
     }
     $rootScope.showAlert = showAlert
+
+    $scope.openMenu = function($mdOpenMenu, ev){
+        console.log("open menu!")
+        $mdOpenMenu(ev);
+    }
+
+
 })
 
 
@@ -159,26 +168,28 @@ angular.module('landing', [
         })
     })
 
+
     .config(function ($routeProvider) {
-        $routeProvider.when('/landing/:landingPageName', {
-            templateUrl: "landing.tpl.html",
-            controller: "LandingPageCtrl"
+        $routeProvider.when('/about', {
+            templateUrl: "about.tpl.html",
+            controller: "GenaricPageCtrl"
         })
     })
 
     .config(function ($routeProvider) {
-        $routeProvider.when('/welcome', {
-            templateUrl: "welcome.tpl.html",
-            controller: "WelcomePageCtrl"
+        $routeProvider.when('/press', {
+            templateUrl: "press.tpl.html",
+            controller: "GenaricPageCtrl"
         })
     })
 
     .config(function ($routeProvider) {
-        $routeProvider.when('/faq', {
-            templateUrl: "faq.tpl.html",
-            controller: "FaqPageCtrl"
+        $routeProvider.when('/team', {
+            templateUrl: "team.tpl.html",
+            controller: "GenaricPageCtrl"
         })
     })
+
 
 
 
@@ -195,130 +206,14 @@ angular.module('landing', [
         console.log("PageNotFound controller is running!")
 
     })
-    .controller("FaqPageCtrl", function($scope, $anchorScroll){
-        console.log("FaqPageCtrl controller is running!")
+    .controller("GenaricPageCtrl", function($scope, $anchorScroll){
+        console.log("GenaricPageCtrl controller is running!")
 
 
     })
 
 
-    .controller("WelcomePageCtrl", function($scope, $timeout){
-        console.log("WelcomePageCtrl controller is running!")
-        $timeout(function(){
-            if (document.getElementById("unpaywall-is-installed")){
-                console.log("unpaywall is installed!")
-                ga("send", "event", "welcome after install")
-            }
-        }, 1500)
-
-    })
-
-
-    .controller("LandingPageCtrl", function ($scope,
-                                             $document,
-                                             $http,
-                                             $location,
-                                             $rootScope,
-                                             $mdDialog,
-                                             $timeout) {
-
-
-        // support legacy faq hack
-        if ($location.search().faq){
-            $location.url("/faq")
-        }
-
-
-        // set the browser
-        var ua = navigator.userAgent
-        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)
-        var browser
-
-
-        // firefox works on desktop and android. but don't handle that
-        // for now. fix this later.
-        if (ua.indexOf("Firefox") > -1 && !isMobile) {
-            browser = "firefox"
-        }
-
-        // chrome works on desktop only
-        else if (ua.indexOf("Chrome") > -1 && !isMobile) {
-            browser = "chrome"
-        }
-
-        else {
-            browser = "unsupported"
-        }
-
-
-
-        $scope.browser = browser
-
-
-
-        $scope.ctaClick = function(){
-            console.log("clicked to install the extension")
-
-            // can't install it, so let the users email themselves a reminder.
-            if (browser == 'unsupported') {
-                var emailSubject = "Check out Unpaywall"
-                var emailBody = "Just a small reminder to check out the Unpaywall extension at http://unpaywall.org"
-                var emailUrl = "mailto:?subject=" + encodeURI(emailSubject) + "&body=" + encodeURI(emailBody)
-                window.location = emailUrl
-            }
-
-
-            // install for firefox. for now that just means just tell them it's coming soon.
-            else if (browser == 'firefox') {
-                ga("send", "event", "Clicked Install", "firefox")
-                var webstoreUrl = "https://addons.mozilla.org/en-US/firefox/addon/unpaywall/"
-                window.location = webstoreUrl
-
-
-                //$mdDialog.show({
-                //  controller: function($scope, $mdDialog){
-                //      console.log("dialog ctrl!")
-                //      $scope.cancel = function(){
-                //          $mdDialog.cancel()
-                //      }
-                //  },
-                //  templateUrl: 'firefox-coming-soon.tpl.html',
-                //  clickOutsideToClose:true,
-                //    parent: angular.element(document.body)
-                //})
-            }
-
-            // install for chrome
-            else if (browser == 'chrome') {
-                console.log("Install for Chrome")
-                ga("send", "event", "Clicked Install", "chrome")
-                var webstoreUrl = "https://chrome.google.com/webstore/detail/unpaywall/iplffkdpngmdjhlpjmppncnlhomiipha"
-
-                // inline install does not work in fullscreen mode.
-                if( window.outerHeight == screen.height) {
-                    console.log("full screen! opening web store")
-                    window.location = webstoreUrl
-                }
-
-                chrome.webstore.install(
-                    undefined,
-                    function(msg){
-                        console.log("inline install success.")
-                        ga("send", "event", "Installed", "chrome")
-                        $http.post("/log/install", {})
-                    },
-                    function(msg) {
-                        window.location = webstoreUrl
-                        ga("send", "event", "Install cancelled", "chrome")
-                        console.log("inline install failure. redirecting to webstore. ", msg)
-                    }
-                )
-
-            }
-            else {
-                console.log("um not sure how we got here...")
-            }
-        }
+    .controller("LandingPageCtrl", function ($scope) {
 
     })
 
@@ -414,7 +309,19 @@ angular.module("numFormat", [])
 
         }
     });
-angular.module('templates.app', ['faq.tpl.html', 'footer.tpl.html', 'header.tpl.html', 'landing.tpl.html', 'page-not-found.tpl.html', 'welcome.tpl.html']);
+angular.module('templates.app', ['about.tpl.html', 'faq.tpl.html', 'footer.tpl.html', 'header.tpl.html', 'landing.tpl.html', 'page-not-found.tpl.html', 'press.tpl.html', 'team.tpl.html']);
+
+angular.module("about.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("about.tpl.html",
+    "<div class=\"page about\">\n" +
+    "    <div class=\"content\">\n" +
+    "        <h1>About</h1>\n" +
+    "\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "<div class=\"footer-container\" ng-include=\"'footer.tpl.html'\"></div>\n" +
+    "");
+}]);
 
 angular.module("faq.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("faq.tpl.html",
@@ -623,44 +530,59 @@ angular.module("footer.tpl.html", []).run(["$templateCache", function($templateC
 
 angular.module("header.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("header.tpl.html",
-    "<div class=\"navbar\">\n" +
-    "    <a href=\"/\">\n" +
-    "        <img id=\"logo\" src=\"static/img/logo-white.png\" alt=\"\">\n" +
-    "    </a>\n" +
-    "    <div class=\"spacer\"></div>\n" +
+    "<div class=\"ti-page-header\">\n" +
+    "    <div class=\"navbar\">\n" +
+    "        <a href=\"/\">\n" +
+    "            <img id=\"logo\" src=\"static/img/impactstory-logo-sideways.png\" alt=\"\">\n" +
+    "        </a>\n" +
+    "        <div class=\"spacer\"></div>\n" +
     "\n" +
-    "    <!--\n" +
-    "    <a class=\"questions\" href=\"\" ng-click=\"scrollToAbout()\">\n" +
-    "    </a>\n" +
-    "    -->\n" +
     "\n" +
-    "    <!--\n" +
-    "    <div class=\"links\">\n" +
-    "        <a href=\"/\" class=\"install\" hide show--gt-xs>\n" +
-    "            <i class=\"fa fa-plus-circle\"></i>\n" +
-    "            Install\n" +
-    "        </a>\n" +
-    "        <a href=\"/faq\">\n" +
-    "            <i class=\"fa fa-question-circle\"></i>\n" +
-    "            FAQ\n" +
-    "        </a>\n" +
-    "        <a href=\"/\" class=\"home\">\n" +
-    "            <i class=\"fa fa-home\"></i>\n" +
-    "            home\n" +
-    "        </a>\n" +
+    "        <div class=\"links\" hide show-gt-xs>\n" +
+    "            <a href=\"/\" class=\"install\">Home</a>\n" +
+    "            <a href=\"/about\">About</a>\n" +
+    "            <a href=\"/press\">Press</a>\n" +
+    "            <a href=\"/team\">Team</a>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"menu-button\" hide-gt-xs>\n" +
+    "\n" +
+    "            <md-menu md-position-mode=\"target-right target\" >\n" +
+    "                <md-button class=\"md-icon-button\" ng-click=\"openMenu($mdOpenMenu, $event)\">\n" +
+    "                    <i class=\"fa fa-bars\"></i>\n" +
+    "                </md-button>\n" +
+    "              <md-menu-content width=\"4\">\n" +
+    "                  <md-menu-item>\n" +
+    "                      <a href=\"/\" class=\"install\">Home</a>\n" +
+    "                  </md-menu-item>\n" +
+    "\n" +
+    "                  <md-menu-item>\n" +
+    "                      <a href=\"/about\">About</a>\n" +
+    "                  </md-menu-item>\n" +
+    "\n" +
+    "                  <md-menu-item>\n" +
+    "                      <a href=\"/press\">Press</a>\n" +
+    "                  </md-menu-item>\n" +
+    "\n" +
+    "                  <md-menu-item>\n" +
+    "                      <a href=\"/team\">Team</a>\n" +
+    "                  </md-menu-item>\n" +
+    "\n" +
+    "\n" +
+    "              </md-menu-content>\n" +
+    "            </md-menu>\n" +
+    "        </div>\n" +
+    "\n" +
+    "\n" +
     "\n" +
     "    </div>\n" +
-    "    -->\n" +
-    "\n" +
-    "\n" +
-    "\n" +
-    "</div>");
+    "</div>\n" +
+    "");
 }]);
 
 angular.module("landing.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("landing.tpl.html",
     "<div class=\"page landing\">\n" +
-    "    <div class=\"ti-page-header landing-page\" ng-include=\"'header.tpl.html'\"></div>\n" +
     "    <div class=\"top-screen screen\">\n" +
     "\n" +
     "\n" +
@@ -671,13 +593,15 @@ angular.module("landing.tpl.html", []).run(["$templateCache", function($template
     "                </div>\n" +
     "            </div>\n" +
     "            <div class=\"about\">\n" +
-    "                Impactstory is a nonprofit obsessed with making scholarly research more\n" +
+    "                Impactstory is a nonprofit dedicated to making scholarly research more\n" +
     "                open, accessible, and reusable. We create and support free services including\n" +
     "                <a href=\"http://unpaywall.org\">Unpaywall,</a>\n" +
     "                <a href=\"http://oadoi.org\">oaDOI,</a>\n" +
     "                <a href=\"http://profiles.impactstory.org\">Impactstory Profiles,</a> and\n" +
     "                <a href=\"http://depsy.org\">Depsy.</a>\n" +
     "            </div>\n" +
+    "\n" +
+    "            <!--\n" +
     "            <div class=\"links\">\n" +
     "                <a href=\"mailto:team@impactstory.org\">\n" +
     "                    <i class=\"fa fa-envelope-o\"></i>\n" +
@@ -692,6 +616,7 @@ angular.module("landing.tpl.html", []).run(["$templateCache", function($template
     "                    GitHub\n" +
     "                </a>\n" +
     "            </div>\n" +
+    "            -->\n" +
     "\n" +
     "\n" +
     "        </div>\n" +
@@ -743,47 +668,23 @@ angular.module("page-not-found.tpl.html", []).run(["$templateCache", function($t
     "</div>");
 }]);
 
-angular.module("welcome.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("welcome.tpl.html",
-    "<div class=\"page welcome\">\n" +
-    "    <div class=\"ti-page-header welcome\" ng-include=\"'header.tpl.html'\"></div>\n" +
+angular.module("press.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("press.tpl.html",
+    "<div class=\"page press\">\n" +
     "    <div class=\"content\">\n" +
+    "        <h1>Press</h1>\n" +
     "\n" +
-    "        <img id=\"screenshot\" src=\"static/img/laptop-screenshot.png\" alt=\"\">\n" +
-    "        <p>\n" +
-    "            Welcome to Unpaywall! When you see the\n" +
-    "            <span class=\"tab-color green\">green tab</span>\n" +
-    "            beside a research article,\n" +
-    "            click it to read the full text. Try this example:\n" +
-    "        </p>\n" +
-    "        <p class=\"eg\">\n" +
-    "            <a class=\"eg\" target=\"_blank\" href=\"http://www.nature.com/nature/journal/v542/n7642/full/nature21360.html\">\n" +
-    "                <i class=\"fa fa-file-text-o\"></i>\n" +
-    "                Try it now\n" +
-    "            </a>\n" +
-    "        </p>\n" +
-    "        <p>\n" +
-    "            <!--\n" +
-    "            That article will cost you $32 to read on Nature.com...except now that\n" +
-    "            you've got Unpaywall, it's free!\n" +
-    "            -->\n" +
-    "\n" +
-    "            You'll see our green tab on 65-85% of articles\n" +
-    "            (if we can't find fulltext, you'll see a\n" +
-    "            <span class=\"tab-color gray\">gray tab</span>\n" +
-    "\n" +
-    "            ). Happy reading!\n" +
-    "\n" +
-    "        </p>\n" +
-    "\n" +
-    "\n" +
-    "\n" +
-    "\n" +
-    "        <p class=\"ps\">\n" +
-    "            PS for the Open Access nerds: the Unpaywall tab\n" +
-    "            can change colors to indicate Green or Gold OA, too. Enable it in settings.\n" +
-    "        </p>\n" +
-    "\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "<div class=\"footer-container\" ng-include=\"'footer.tpl.html'\"></div>\n" +
+    "");
+}]);
+
+angular.module("team.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("team.tpl.html",
+    "<div class=\"page team\">\n" +
+    "    <div class=\"content\">\n" +
+    "        <h1>Team</h1>\n" +
     "\n" +
     "    </div>\n" +
     "</div>\n" +

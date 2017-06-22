@@ -55,6 +55,8 @@ angular.module('app').run(function($route,
     ga('create', 'UA-23384030-6', 'auto');
     $rootScope.ga = ga
 
+    console.log("running homepage!")
+
 
 
     $rootScope.$on('$routeChangeStart', function(next, current){
@@ -130,6 +132,13 @@ angular.module('app').controller('AppCtrl', function(
             );
     }
     $rootScope.showAlert = showAlert
+
+    $scope.openMenu = function($mdOpenMenu, ev){
+        console.log("open menu!")
+        $mdOpenMenu(ev);
+    }
+
+
 })
 
 

@@ -10,26 +10,28 @@ angular.module('landing', [
         })
     })
 
+
     .config(function ($routeProvider) {
-        $routeProvider.when('/landing/:landingPageName', {
-            templateUrl: "landing.tpl.html",
-            controller: "LandingPageCtrl"
+        $routeProvider.when('/about', {
+            templateUrl: "about.tpl.html",
+            controller: "GenaricPageCtrl"
         })
     })
 
     .config(function ($routeProvider) {
-        $routeProvider.when('/welcome', {
-            templateUrl: "welcome.tpl.html",
-            controller: "WelcomePageCtrl"
+        $routeProvider.when('/press', {
+            templateUrl: "press.tpl.html",
+            controller: "GenaricPageCtrl"
         })
     })
 
     .config(function ($routeProvider) {
-        $routeProvider.when('/faq', {
-            templateUrl: "faq.tpl.html",
-            controller: "FaqPageCtrl"
+        $routeProvider.when('/team', {
+            templateUrl: "team.tpl.html",
+            controller: "GenaricPageCtrl"
         })
     })
+
 
 
 
@@ -46,130 +48,14 @@ angular.module('landing', [
         console.log("PageNotFound controller is running!")
 
     })
-    .controller("FaqPageCtrl", function($scope, $anchorScroll){
-        console.log("FaqPageCtrl controller is running!")
+    .controller("GenaricPageCtrl", function($scope, $anchorScroll){
+        console.log("GenaricPageCtrl controller is running!")
 
 
     })
 
 
-    .controller("WelcomePageCtrl", function($scope, $timeout){
-        console.log("WelcomePageCtrl controller is running!")
-        $timeout(function(){
-            if (document.getElementById("unpaywall-is-installed")){
-                console.log("unpaywall is installed!")
-                ga("send", "event", "welcome after install")
-            }
-        }, 1500)
-
-    })
-
-
-    .controller("LandingPageCtrl", function ($scope,
-                                             $document,
-                                             $http,
-                                             $location,
-                                             $rootScope,
-                                             $mdDialog,
-                                             $timeout) {
-
-
-        // support legacy faq hack
-        if ($location.search().faq){
-            $location.url("/faq")
-        }
-
-
-        // set the browser
-        var ua = navigator.userAgent
-        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)
-        var browser
-
-
-        // firefox works on desktop and android. but don't handle that
-        // for now. fix this later.
-        if (ua.indexOf("Firefox") > -1 && !isMobile) {
-            browser = "firefox"
-        }
-
-        // chrome works on desktop only
-        else if (ua.indexOf("Chrome") > -1 && !isMobile) {
-            browser = "chrome"
-        }
-
-        else {
-            browser = "unsupported"
-        }
-
-
-
-        $scope.browser = browser
-
-
-
-        $scope.ctaClick = function(){
-            console.log("clicked to install the extension")
-
-            // can't install it, so let the users email themselves a reminder.
-            if (browser == 'unsupported') {
-                var emailSubject = "Check out Unpaywall"
-                var emailBody = "Just a small reminder to check out the Unpaywall extension at http://unpaywall.org"
-                var emailUrl = "mailto:?subject=" + encodeURI(emailSubject) + "&body=" + encodeURI(emailBody)
-                window.location = emailUrl
-            }
-
-
-            // install for firefox. for now that just means just tell them it's coming soon.
-            else if (browser == 'firefox') {
-                ga("send", "event", "Clicked Install", "firefox")
-                var webstoreUrl = "https://addons.mozilla.org/en-US/firefox/addon/unpaywall/"
-                window.location = webstoreUrl
-
-
-                //$mdDialog.show({
-                //  controller: function($scope, $mdDialog){
-                //      console.log("dialog ctrl!")
-                //      $scope.cancel = function(){
-                //          $mdDialog.cancel()
-                //      }
-                //  },
-                //  templateUrl: 'firefox-coming-soon.tpl.html',
-                //  clickOutsideToClose:true,
-                //    parent: angular.element(document.body)
-                //})
-            }
-
-            // install for chrome
-            else if (browser == 'chrome') {
-                console.log("Install for Chrome")
-                ga("send", "event", "Clicked Install", "chrome")
-                var webstoreUrl = "https://chrome.google.com/webstore/detail/unpaywall/iplffkdpngmdjhlpjmppncnlhomiipha"
-
-                // inline install does not work in fullscreen mode.
-                if( window.outerHeight == screen.height) {
-                    console.log("full screen! opening web store")
-                    window.location = webstoreUrl
-                }
-
-                chrome.webstore.install(
-                    undefined,
-                    function(msg){
-                        console.log("inline install success.")
-                        ga("send", "event", "Installed", "chrome")
-                        $http.post("/log/install", {})
-                    },
-                    function(msg) {
-                        window.location = webstoreUrl
-                        ga("send", "event", "Install cancelled", "chrome")
-                        console.log("inline install failure. redirecting to webstore. ", msg)
-                    }
-                )
-
-            }
-            else {
-                console.log("um not sure how we got here...")
-            }
-        }
+    .controller("LandingPageCtrl", function ($scope) {
 
     })
 

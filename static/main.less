@@ -8,7 +8,7 @@
 
 
 @contrast: #2196F3;
-@baseColor: #20e168;
+@baseColor: #ff0000;
 
 @oaGold: #f9bc01;
 @oaGreen: #20e168;
@@ -24,10 +24,12 @@
 @navbarHeight: 120px;
 
 html {
+  background: #fff;
 }
 
 body {
   margin: 0;
+  background: #fff;
   a {
     text-decoration: none;
     color: @contrast;
@@ -53,39 +55,33 @@ body {
   right:0;
   left:0;
   z-index: 9;
+  background: rgba(256, 256, 256, 0.5);
 
-  background-image: linear-gradient(
-    135deg,
-    @gradientTop, @gradientBottom
-  );
-
-
-  &.landing-page {
-    background: none;
-    background-image: none;
-    a.home {
-      display: none;
-    }
-  }
 
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 5px 5px 0;
     a {
-      color: #fff;
+      color: #333;
       font-size: 16px;
       padding: 10px 20px;
     }
     img#logo {
       width: 200px;
     }
+
+    div.menu-button { // only shows up on mobile
+      color: #333;
+    }
+
   }
 }
 
 
 .page {
+  margin-top: 100px;
   h1 {
     font-weight: 300;
     margin-bottom: 10px;
@@ -103,92 +99,13 @@ body {
   font-size: 20px;
 }
 
-.page.welcome {
-  padding-top: 150px;
-  line-height: 1.4;
-  font-size: 20px;
-  .content {
-    max-width: 700px;
-  }
-
-  img#screenshot {
-    //width: 500px;
-  }
-  h1 {
-    margin: 0 0 10px;
-  }
-
-  h2 {
-    font-weight: 300;
-    font-size: 130%;
-    margin-bottom: 10px;
-  }
-  span.tab-color {
-    font-weight: bold;
-    &.green {
-      color: @baseColor;
-    }
-    &.gray {
-      color: #999;
-    }
-  }
-  p {
-    margin: 0;
-    &.eg {
-      margin: 30px 0;
-      line-height: 1.3;
-      a {
-        display: inline-block;
-        cursor: pointer;
-        padding: 20px 40px;
-        border-radius: 3px;
-        background: @baseColor;
-        color: #fff;
-        margin-left: 210px;
-
-        //border: 3px solid #333;
-
-        transition: all 0.15s ease;
-        &:hover {
-          transform: scale(1.03125);
-          text-decoration: none;
-        }
-        i {
-          margin-right: 8px;
-          margin-top: 4px;
-        }
-      }
-
-    }
-  }
-  .ps {
-    margin-top: 50px;
-    font-size: 80%;
-  }
-}
 
 
 
 div.page.landing {
-  //margin-top: -@navbarHeight;
+  margin-top: 0;
 
   .screen {
-    backgound: #fff;
-    .content {
-      padding-left: 10px;
-      padding-right: 10px;
-      max-width: 900px;
-      margin: 0 auto;
-      font-size: 20px;
-      line-height: 1.4;
-      h2 {
-        font-weight: 300;
-        text-align: center;
-        font-size: 40px;
-        color: @baseColor;
-      }
-    }
-
     &.top-screen {
 
       height: 100vh;
@@ -200,6 +117,8 @@ div.page.landing {
       background-image: none;
       background: #333;
 
+      background: url(img/turbine.jpg) no-repeat center center fixed;
+
 
       display:flex;
       justify-content: center;
@@ -210,30 +129,12 @@ div.page.landing {
       position: relative;
 
 
-
-
-      .main-img {
-        margin-right: 50px;
-        @media @xs {
-          display: none;
-        }
-        @media @sm {
-          display:none;
-        }
-
-        img {
-          @media @sm {
-            width: 400px;
-          }
-        }
-      }
-
-
       .main-copy {
         max-width: 800px;
         padding: 10px;
         margin-top: -10px;
         font-size: 24px;
+        line-height: 1.3;
 
 
         a {
@@ -248,43 +149,25 @@ div.page.landing {
         div.tagline {
           font-weight: 300;
           font-size: 260%;
-          color: @contrast;
+          color: @baseColor;
+          line-height: 1.1;
           @media @xs {
             font-size: 30px;
             line-height: 1.3;
           }
-          .above {
-            .tab-word {
-              display: inline-block;
-              //background: @baseColor;
-              
-              border-radius: 40px 0 0 40px;
-              padding: 0 0 0 .35em;
-              font-size: 95%;
-              vertical-align: 2px;
-              border: 2px solid #fff;
-            }
-
-          }
-          .under {
-            white-space: nowrap;
-          }
         }
 
         div.about {
-          color: #fff;
+          color: #333;
           margin-top: 30px;
           margin-bottom: 40px;
+          a {
+            color: @baseColor;
+            text-decoration: none;
+          }
         }
 
         div.links {
-          a {
-            color: #fff;
-            color: #c0bfbf;
-            font-size: 16px;
-            padding: 5px;
-            text-decoration: none;
-          }
         }
 
 
@@ -332,83 +215,12 @@ div.page.landing {
 }
 
 
-#faq {
-  padding-top: 50px;
-  h2 {
-    display: none;
-  }
-  dl {
-    dt {
-      font-size: 105%;
-      margin: 45px 0 5px;
-      font-weight: bold;
-      i {
-        font-size: 70%;
-        margin-right: 3px;
-        vertical-align: 2px;
-        display: none;
-
-      }
-    }
-    dd {
-      margin: 0;
-      span.color {
-        //font-weight: bold;
-        //color: #fff;
-        //padding: 5px;
-        //&.gold { background: @oaGold;}
-        //&.green { background: @oaGreen;}
-        //&.blue { background: @oaBlue;}
-      }
-      ul {
-        li {
-          list-style-type: none;
-          display: flex;
-          //justify-content: left;
-          margin: 10px 0 0;
-          align-items: center;
-          max-width: 800px;
-          span.color {
-            font-weight: bold;
-            &.gold { color: @oaGold;}
-            &.green { color: @oaGreen;}
-            &.blue { color: @oaBlue;}
-
-          }
-          div.button {
-            color: #fff;
-            display: flex;
-            border-radius: 40px 0 0 40px;
-            flex-basis: auto;
-            width: 35px;
-            height: 40px;
-            margin: 2px 10px 0 0;
-            justify-content: center;
-            align-items: center;
-            i {
-              margin-left: 3px;
-            }
-          }
-          div.text {
-            flex-basis: 100%;
-          }
-          a.eg {
-            font-size: 14px;
-          }
-
-        }
-      }
-
-    }
-  }
-}
-
 div.footer {
-  //background: @baseColor;
-  background-image: linear-gradient(
-        135deg,
-        @gradientTop, @gradientBottom
-      );
+  background: #333;
+  //background-image: linear-gradient(
+  //      135deg,
+  //      @gradientTop, @gradientBottom
+  //    );
 
 
   padding: 50px 20px;
@@ -447,6 +259,7 @@ div.footer {
       }
     }
     .credit {
+      display: none;
       font-size: 14px;
       line-height: 1.4;
       text-align: right;
@@ -455,23 +268,5 @@ div.footer {
       }
 
     }
-  }
-}
-
-a.dialog-button {
-  display: inline-block;
-  background: #ddd;
-  display: inline-block;
-  padding: 12px;
-  margin: 0 5px 20px;
-  border-radius: 3px;
-  color: #000;
-  &:hover {
-    text-decoration: none;
-  }
-  &.primary {
-    font-weight: bold;
-    background: @baseColor;
-    color: #fff;
   }
 }

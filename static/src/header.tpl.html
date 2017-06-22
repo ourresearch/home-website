@@ -1,32 +1,47 @@
-<div class="navbar">
-    <a href="/">
-        <img id="logo" src="static/img/logo-white.png" alt="">
-    </a>
-    <div class="spacer"></div>
+<div class="ti-page-header">
+    <div class="navbar">
+        <a href="/">
+            <img id="logo" src="static/img/impactstory-logo-sideways.png" alt="">
+        </a>
+        <div class="spacer"></div>
 
-    <!--
-    <a class="questions" href="" ng-click="scrollToAbout()">
-    </a>
-    -->
 
-    <!--
-    <div class="links">
-        <a href="/" class="install" hide show--gt-xs>
-            <i class="fa fa-plus-circle"></i>
-            Install
-        </a>
-        <a href="/faq">
-            <i class="fa fa-question-circle"></i>
-            FAQ
-        </a>
-        <a href="/" class="home">
-            <i class="fa fa-home"></i>
-            home
-        </a>
+        <div class="links" hide show-gt-xs>
+            <a href="/" class="install">Home</a>
+            <a href="/about">About</a>
+            <a href="/press">Press</a>
+            <a href="/team">Team</a>
+        </div>
+
+        <div class="menu-button" hide-gt-xs>
+
+            <md-menu md-position-mode="target-right target" >
+                <md-button class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
+                    <i class="fa fa-bars"></i>
+                </md-button>
+              <md-menu-content width="4">
+                  <md-menu-item>
+                      <a href="/" class="install">Home</a>
+                  </md-menu-item>
+
+                  <md-menu-item>
+                      <a href="/about">About</a>
+                  </md-menu-item>
+
+                  <md-menu-item>
+                      <a href="/press">Press</a>
+                  </md-menu-item>
+
+                  <md-menu-item>
+                      <a href="/team">Team</a>
+                  </md-menu-item>
+
+
+              </md-menu-content>
+            </md-menu>
+        </div>
+
+
 
     </div>
-    -->
-
-
-
 </div>

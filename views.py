@@ -57,8 +57,9 @@ def index_endpoint(path="index", page=""):
 
     url_slugs_to_stay_here = [
         "",
-        "media",
-        "team"
+        "press",
+        "team",
+        "about"
     ]
     if page.lower() not in url_slugs_to_stay_here:
         return redirect(u"https://profiles.impactstory.org/{}".format(page.strip()), code=302)
