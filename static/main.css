@@ -44,8 +44,15 @@ body .main-view {
 .ti-page-header .navbar img#logo {
   width: 200px;
 }
-.ti-page-header .navbar div.menu-button {
+.ti-page-header .navbar div.mobile-menu {
   color: #333;
+}
+.ti-page-header .navbar div.mobile-menu a {
+  margin: 0;
+  padding: 20px;
+}
+.ti-page-header .navbar div.mobile-menu md-menu md-menu-item {
+  height: auto;
 }
 .page {
   margin-top: 100px;

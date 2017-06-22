@@ -133,9 +133,14 @@ angular.module('app').controller('AppCtrl', function(
     }
     $rootScope.showAlert = showAlert
 
+    var originatorEv
     $scope.openMenu = function($mdOpenMenu, ev){
         console.log("open menu!")
+        originatorEv = ev
         $mdOpenMenu(ev);
+    }
+    $scope.menuClick = function(){
+        console.log("this is really involved.")
     }
 
 

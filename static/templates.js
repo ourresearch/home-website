@@ -234,27 +234,27 @@ angular.module("header.tpl.html", []).run(["$templateCache", function($templateC
     "            <a href=\"/team\">Team</a>\n" +
     "        </div>\n" +
     "\n" +
-    "        <div class=\"menu-button\" hide-gt-xs>\n" +
+    "        <div class=\"mobile-menu\" hide-gt-xs>\n" +
     "\n" +
     "            <md-menu md-position-mode=\"target-right target\" >\n" +
     "                <md-button class=\"md-icon-button\" ng-click=\"openMenu($mdOpenMenu, $event)\">\n" +
     "                    <i class=\"fa fa-bars\"></i>\n" +
     "                </md-button>\n" +
-    "              <md-menu-content width=\"4\">\n" +
+    "              <md-menu-content>\n" +
     "                  <md-menu-item>\n" +
-    "                      <a href=\"/\" class=\"install\">Home</a>\n" +
+    "                      <a href=\"/\" ng-click=\"menuClick()\">Home</a>\n" +
     "                  </md-menu-item>\n" +
     "\n" +
     "                  <md-menu-item>\n" +
-    "                      <a href=\"/about\">About</a>\n" +
+    "                      <a href=\"/about\" ng-click=\"menuClick()\">About</a>\n" +
     "                  </md-menu-item>\n" +
     "\n" +
     "                  <md-menu-item>\n" +
-    "                      <a href=\"/press\">Press</a>\n" +
+    "                      <a href=\"/press\" ng-click=\"menuClick()\">Press</a>\n" +
     "                  </md-menu-item>\n" +
     "\n" +
     "                  <md-menu-item>\n" +
-    "                      <a href=\"/team\">Team</a>\n" +
+    "                      <a href=\"/team\" ng-click=\"menuClick()\">Team</a>\n" +
     "                  </md-menu-item>\n" +
     "\n" +
     "\n" +

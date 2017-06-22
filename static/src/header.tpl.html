@@ -13,27 +13,27 @@
             <a href="/team">Team</a>
         </div>
 
-        <div class="menu-button" hide-gt-xs>
+        <div class="mobile-menu" hide-gt-xs>
 
             <md-menu md-position-mode="target-right target" >
                 <md-button class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
                     <i class="fa fa-bars"></i>
                 </md-button>
-              <md-menu-content width="4">
+              <md-menu-content>
                   <md-menu-item>
-                      <a href="/" class="install">Home</a>
+                      <a href="/" ng-click="menuClick()">Home</a>
                   </md-menu-item>
 
                   <md-menu-item>
-                      <a href="/about">About</a>
+                      <a href="/about" ng-click="menuClick()">About</a>
                   </md-menu-item>
 
                   <md-menu-item>
-                      <a href="/press">Press</a>
+                      <a href="/press" ng-click="menuClick()">Press</a>
                   </md-menu-item>
 
                   <md-menu-item>
-                      <a href="/team">Team</a>
+                      <a href="/team" ng-click="menuClick()">Team</a>
                   </md-menu-item>
 
 
