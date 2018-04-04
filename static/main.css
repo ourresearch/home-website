@@ -135,9 +135,12 @@ div.page.landing .screen.top-screen .main-copy div.about a {
   color: #ff0000;
   text-decoration: none;
 }
+div.page.landing .screen.top-screen .main-copy div.links {
+  margin-left: -10px;
+}
 div.page.landing .screen.top-screen .main-copy div.links a {
   color: #333;
-  font-size: 14px;
+  font-size: 18px;
   padding: 10px;
 }
 div.page.landing .screen div.more {
