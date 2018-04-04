@@ -292,7 +292,6 @@ angular.module("landing.tpl.html", []).run(["$templateCache", function($template
     "                <a href=\"http://depsy.org\">Depsy.</a>\n" +
     "            </div>\n" +
     "\n" +
-    "            <!--\n" +
     "            <div class=\"links\">\n" +
     "                <a href=\"mailto:team@impactstory.org\">\n" +
     "                    <i class=\"fa fa-envelope-o\"></i>\n" +
@@ -307,7 +306,6 @@ angular.module("landing.tpl.html", []).run(["$templateCache", function($template
     "                    GitHub\n" +
     "                </a>\n" +
     "            </div>\n" +
-    "            -->\n" +
     "\n" +
     "\n" +
     "        </div>\n" +
