@@ -600,9 +600,9 @@ angular.module("landing.tpl.html", []).run(["$templateCache", function($template
     "            <div class=\"about\">\n" +
     "                Impactstory is a nonprofit dedicated to making scholarly research more\n" +
     "                open, accessible, and reusable. We create and support free services including\n" +
-    "                <a href=\"http://unpaywall.org\">Unpaywall,</a>\n" +
-    "                <a href=\"http://oadoi.org\">oaDOI,</a>\n" +
-    "                <a href=\"http://profiles.impactstory.org\">Impactstory Profiles,</a> and\n" +
+    "                <a href=\"https://unpaywall.org\">Unpaywall,</a>\n" +
+    "                <a href=\"https://unpaywall.org/data\">Unpaywall Data,</a>\n" +
+    "                <a href=\"https://profiles.impactstory.org\">Impactstory Profiles,</a> and\n" +
     "                <a href=\"http://depsy.org\">Depsy.</a>\n" +
     "            </div>\n" +
     "\n" +
@@ -690,6 +690,78 @@ angular.module("team.tpl.html", []).run(["$templateCache", function($templateCac
     "<div class=\"page team\">\n" +
     "    <div class=\"content\">\n" +
     "        <h1>Team</h1>\n" +
+    "\n" +
+    "\n" +
+    "        <div class=\"person first\">\n" +
+    "            <img src=\"https://pbs.twimg.com/profile_images/519570521/heather_new_haircut_400x400.jpg\" height=100/>\n" +
+    "\n" +
+    "            <div class=\"text\">\n" +
+    "                <p><strong>Heather Piwowar</strong> is a cofounder of Impactstory and a leading researcher in research data availability and data reuse. She wrote one of the first papers measuring the <a href=\"http://www.plosone.org/article/info:doi/10.1371/journal.pone.0000308\">citation benefit of publicly available research data</a>, has studied  <a href=\"http://www.plosone.org/article/info:doi/10.1371/journal.pone.0018657\">patterns in  data archiving</a>, <a href=\"https://peerj.com/preprints/1/\">patterns of data reuse</a>, and the <a href=\"http://researchremix.wordpress.com/2010/10/12/journalpolicyproposal\">impact of journal data sharing policies</a>.</p>\n" +
+    "\n" +
+    "                <p>Heather has a bachelor’s and master’s degree from MIT in electrical engineering, 10 years of experience as a software engineer, and a Ph.D. in Biomedical Informatics from the U of Pittsburgh.  She is an <a href=\"http://www.slideshare.net/hpiwowar\">frequent speaker</a> on research data archiving, writes a well-respected <a href=\"http://researchremix.wordpress.com\">research blog</a>, and is active on twitter (<a href=\"http://twitter.com/researchremix\">@researchremix</a>). </p>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"person subsequent\">\n" +
+    "            <img src=\"https://pbs.twimg.com/profile_images/820790537456226304/Tis8dyhv_400x400.jpg\" height=100/>\n" +
+    "            <div class=\"text\">\n" +
+    "                <p><strong>Jason Priem</strong> is a cofounder of Impactstory and a doctoral student in information science (currently on leave of absence) at the University of North Carolina-Chapel Hill. Since <a href=\"https://twitter.com/jasonpriem/status/25844968813\">coining the term \"altmetrics,\"</a> he's remained active in the field, organizing the annual <a href=\"http:altmetrics.org/altmetrics12\">altmetrics workshops</a>, giving <a href=\"http://jasonpriem.org/cv/#invited\">invited talks</a>, and publishing <a href=\"http://jasonpriem.org/cv/#refereed\">peer-reviewed altmetrics research.</a></p>\n" +
+    "\n" +
+    "                <p>Jason has contributed to and created several open-source software projects, including <a href=\"http://www.zotero.org\">Zotero</a> and <a href=\"http://feedvis.com\">Feedvis</a>, and has experience and training in art, design, and information visualisation.  Sometimes he writes on a <a href=\"http://jasonpriem.org/blog\">blog</a> and <a href=\"https://twitter.com/#!/jasonpriem\">tweets</a>.</p>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "        <h2 id=\"board\">Board of directors</h2>\n" +
+    "\n" +
+    "        <div class=\"person\">\n" +
+    "            <!--\n" +
+    "            <img src=\"http://i.imgur.com/G4wUQb8.png\" height=100/>\n" +
+    "            -->\n" +
+    "            <img src=\"https://pbs.twimg.com/profile_images/726192222274736128/00yNti0E_400x400.jpg\" alt=\"\">\n" +
+    "\n" +
+    "            <div class=\"text\">\n" +
+    "                <p><strong>Heather Joseph</strong> is the Executive Director of the <a href=\"http://www.sparc.arl.org/\">Scholarly Publishing and Academic Resources Coalition (SPARC)</a> and the convener of the\n" +
+    "                    <a href=\"http://www.taxpayeraccess.org/\">Alliance for Taxpayer Access</a>. Prior to coming to SPARC, she spent 15 years as a publisher in both commercial and not-for-profit publishing organizations. She served as the publishing director at the American Society for Cell Biology, which became the first journal to commit its full content to the NIH’s pioneering open repository, PubMed Central.</p>\n" +
+    "\n" +
+    "                <p>Heather serves on the Board of Directors of numerous not-for-profit organizations, including the\n" +
+    "                    <a href=\"http://www.plos.org\">Public Library of Science</a>.  She is a frequent speaker and writer on scholarly communications in general, and on open access in particular.</p>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"person\">\n" +
+    "            <!--\n" +
+    "            <img src=\"http://i.imgur.com/dVJPqlw.png\" height=100/>\n" +
+    "            -->\n" +
+    "            <img src=\"https://pbs.twimg.com/profile_images/875364025005096961/8_fgpYGC_400x400.jpg\" alt=\"\">\n" +
+    "\n" +
+    "            <div class=\"text\">\n" +
+    "                <p><strong>Ethan White</strong> is an Associate Professor and Moore Investigator in the Department of Wildlife Ecology and Conservation and the Informatics Institute at the University of Florida.\n" +
+    "\n" +
+    "\n" +
+    "                    He studies ecological systems using data-intensive approaches and is actively involved in open approaches to science. He has written papers on <a href=\"http://dx.doi.org/10.4033/iee.2013.6b.6.f\">data management and sharing</a>, <a href=\"http://dx.doi.org/10.1371/journal.pbio.1001745\">best practices in computational science</a>, and <a href=\"http://dx.doi.org/10.1371/journal.pbio.1001563\">the benefits of preprints in biology</a>.</p>\n" +
+    "                <p>Ethan has a PhD in Biology from the University of New Mexico, was a National Science Foundation Postdoctoral Fellow in biological informatics, and is the recipient of a National Science Foundation CAREER 'Young Investigators' Award. He speaks frequently about data-intensive approaches to ecology, co-writes a <a href=\"http://jabberwocky.weecology.org\">blog on ecology, academia, and open science</a>, develops material and serves as an instructor for <a href=”http://software-carpentry.org/”>Software Carpentry</a>, and is active on Twitter(<a href=\"https://twitter.com/ethanwhite/\">@ethanwhite</a>).</p>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"person\">\n" +
+    "            <!--\n" +
+    "            <img src=\"http://static.tumblr.com/2d33e55fcae6625ea29a0ea14e6b99df/5mlmvbq/O15n1w7ty/tumblr_static_headshot_informal.jpg\" height=100/>\n" +
+    "            -->\n" +
+    "            <img src=\"https://pbs.twimg.com/profile_images/793533063913476096/Hs7Ga2Yv_400x400.jpg\" alt=\"\">\n" +
+    "            <div class=\"text\">\n" +
+    "                <p><strong>John Wilbanks</strong> works at <a href=\"http://www.sagebase.org/our-leadership/\">Sage Bionetworks</a>, which helps build <a href=\"http://www.sagebase.org/governance/\">tools and policies</a> that help <a href=\"http://www.sagebase.org/bridge/\">networks of people who have their health data</a> share it with <a href=\"http://synapse.sagebase.org\">networks of people who like to analyze health data</a>.\n" +
+    "                </p>\n" +
+    "                <p>Previously, John worked at Harvard’s <a href=\"http://cyber.law.harvard.edu\">Berkman Center for Internet &amp; Society</a>, the <a href=\"http://www.w3.org/2001/sw/\" title=\"Semantic Web - World Wide Web Consortium\" target=\"_self\">World Wide Web Consortium</a>, the <a href=\"http://en.wikipedia.org/wiki/Pete_Stark\" title='Fortney \"Pete\" Stark' target=\"_self\">US House of Representatives</a>, <a href=\"http://creativecommons.org\" title=\"Creative Commons\" target=\"_self\">Creative Commons</a>, and the <a href=\"http://kauffman.org\">Ewing Marion Kauffman Foundation</a>. John also serves on the board of the non-profit\n" +
+    "                    <a href=\"http://earthsciencefoundation.org/\">Foundation for Earth Science</a> and advisory boards for companies including <a href=\"http://www.boundlesslearning.com/\">Boundless Learning</a>,  <a href=\"http://www.crunchbase.com/company/curious-inc\">Curious</a>,  <a href=\"http://genomera.com\">Genomera</a>, <a href=\"http://www.qualcommlife.com/\">Qualcomm Life</a>, <a href=\"http://patientslikeme.com\">Patients Like Me</a>, and <a href=\"http://www.genospace.com/\">GenoSpace</a>.</p>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "\n" +
     "\n" +
     "    </div>\n" +
     "</div>\n" +

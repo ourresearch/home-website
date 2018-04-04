@@ -19,6 +19,10 @@ body .main-view {
   flex-direction: column;
   min-height: 100vh;
 }
+._md-open-menu-container a {
+  color: #ff0000;
+  padding: 20px;
+}
 .ti-page-header {
   color: #fff;
   margin: 0;
@@ -44,23 +48,21 @@ body .main-view {
 .ti-page-header .navbar img#logo {
   width: 200px;
 }
-.ti-page-header .navbar div.mobile-menu {
+.ti-page-header .navbar div.mobile-menu i {
   color: #333;
-}
-.ti-page-header .navbar div.mobile-menu a {
-  margin: 0;
-  padding: 20px;
-}
-.ti-page-header .navbar div.mobile-menu md-menu md-menu-item {
-  height: auto;
+  font-size: 22px;
 }
 .page {
   margin-top: 100px;
+  margin: 100px 10px 0;
   flex: 1;
 }
 .page h1 {
   font-weight: 300;
   margin-bottom: 10px;
+}
+.page h2 {
+  font-weight: 300;
 }
 .page .content {
   max-width: 900px;
@@ -71,8 +73,22 @@ body .main-view {
   line-height: 1.4;
   font-size: 20px;
 }
+.page.team img {
+  height: 100px;
+  border-radius: 100px;
+}
+.page.team .person {
+  display: flex;
+  margin-top: 30px;
+}
+.page.team .person img {
+  margin: 0 20px 20px 0;
+}
+.page.team .person p {
+  margin: 0 0 20px;
+}
 div.page.landing {
-  margin-top: 0;
+  margin: 0;
 }
 div.page.landing .screen.top-screen {
   height: 100vh;
