@@ -229,8 +229,10 @@ angular.module("header.tpl.html", []).run(["$templateCache", function($templateC
     "\n" +
     "        <div class=\"links\" hide show-gt-xs>\n" +
     "            <a href=\"/\" class=\"install\">Home</a>\n" +
+    "            <!--\n" +
     "            <a href=\"/about\">About</a>\n" +
     "            <a href=\"/press\">Press</a>\n" +
+    "            -->\n" +
     "            <a href=\"/team\">Team</a>\n" +
     "        </div>\n" +
     "\n" +
@@ -430,18 +432,6 @@ angular.module("team.tpl.html", []).run(["$templateCache", function($templateCac
     "            </div>\n" +
     "        </div>\n" +
     "\n" +
-    "        <div class=\"person\">\n" +
-    "            <!--\n" +
-    "            <img src=\"http://static.tumblr.com/2d33e55fcae6625ea29a0ea14e6b99df/5mlmvbq/O15n1w7ty/tumblr_static_headshot_informal.jpg\" height=100/>\n" +
-    "            -->\n" +
-    "            <img src=\"https://pbs.twimg.com/profile_images/793533063913476096/Hs7Ga2Yv_400x400.jpg\" alt=\"\">\n" +
-    "            <div class=\"text\">\n" +
-    "                <p><strong>John Wilbanks</strong> works at <a href=\"http://www.sagebase.org/our-leadership/\">Sage Bionetworks</a>, which helps build <a href=\"http://www.sagebase.org/governance/\">tools and policies</a> that help <a href=\"http://www.sagebase.org/bridge/\">networks of people who have their health data</a> share it with <a href=\"http://synapse.sagebase.org\">networks of people who like to analyze health data</a>.\n" +
-    "                </p>\n" +
-    "                <p>Previously, John worked at Harvard’s <a href=\"http://cyber.law.harvard.edu\">Berkman Center for Internet &amp; Society</a>, the <a href=\"http://www.w3.org/2001/sw/\" title=\"Semantic Web - World Wide Web Consortium\" target=\"_self\">World Wide Web Consortium</a>, the <a href=\"http://en.wikipedia.org/wiki/Pete_Stark\" title='Fortney \"Pete\" Stark' target=\"_self\">US House of Representatives</a>, <a href=\"http://creativecommons.org\" title=\"Creative Commons\" target=\"_self\">Creative Commons</a>, and the <a href=\"http://kauffman.org\">Ewing Marion Kauffman Foundation</a>. John also serves on the board of the non-profit\n" +
-    "                    <a href=\"http://earthsciencefoundation.org/\">Foundation for Earth Science</a> and advisory boards for companies including <a href=\"http://www.boundlesslearning.com/\">Boundless Learning</a>,  <a href=\"http://www.crunchbase.com/company/curious-inc\">Curious</a>,  <a href=\"http://genomera.com\">Genomera</a>, <a href=\"http://www.qualcommlife.com/\">Qualcomm Life</a>, <a href=\"http://patientslikeme.com\">Patients Like Me</a>, and <a href=\"http://www.genospace.com/\">GenoSpace</a>.</p>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
     "\n" +
     "\n" +
     "\n" +
