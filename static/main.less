@@ -99,6 +99,8 @@ body {
 .page {
   margin-top: 100px;
   margin: 100px 10px 0;
+  line-height: 1.5;
+  font-size: 18px;
   h1 {
     font-weight: 300;
     margin-bottom: 10px;
@@ -120,11 +122,30 @@ body {
 }
 
 .page.team {
-  img {
-    height: 100px;
-    border-radius: 100px;
-  }
+
+    .row {
+        display: flex;
+      margin-bottom: 50px;
+        div.img {
+            margin: 0 20px 20px;
+            img {
+                max-width: 400px;
+            }
+        }
+        div.text {
+            p {
+                margin-top: 0;
+            }
+        }
+    }
+
+
+
   .person {
+    img {
+      height: 100px;
+      border-radius: 100px;
+    }
     display: flex;
     margin-top: 30px;
     img {

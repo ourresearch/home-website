@@ -55,6 +55,8 @@ body .main-view {
 .page {
   margin-top: 100px;
   margin: 100px 10px 0;
+  line-height: 1.5;
+  font-size: 18px;
   flex: 1;
 }
 .page h1 {
@@ -73,13 +75,26 @@ body .main-view {
   line-height: 1.4;
   font-size: 20px;
 }
-.page.team img {
-  height: 100px;
-  border-radius: 100px;
+.page.team .row {
+  display: flex;
+  margin-bottom: 50px;
+}
+.page.team .row div.img {
+  margin: 0 20px 20px;
+}
+.page.team .row div.img img {
+  max-width: 400px;
+}
+.page.team .row div.text p {
+  margin-top: 0;
 }
 .page.team .person {
   display: flex;
   margin-top: 30px;
+}
+.page.team .person img {
+  height: 100px;
+  border-radius: 100px;
 }
 .page.team .person img {
   margin: 0 20px 20px 0;

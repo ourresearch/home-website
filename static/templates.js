@@ -374,25 +374,37 @@ angular.module("team.tpl.html", []).run(["$templateCache", function($templateCac
     "    <div class=\"content\">\n" +
     "        <h1>Team</h1>\n" +
     "\n" +
-    "\n" +
-    "        <div class=\"person first\">\n" +
-    "            <img src=\"https://pbs.twimg.com/profile_images/519570521/heather_new_haircut_400x400.jpg\" height=100/>\n" +
+    "        <div class=\"row first\">\n" +
     "\n" +
     "            <div class=\"text\">\n" +
-    "                <p><strong>Heather Piwowar</strong> is a cofounder of Impactstory and a leading researcher in research data availability and data reuse. She wrote one of the first papers measuring the <a href=\"http://www.plosone.org/article/info:doi/10.1371/journal.pone.0000308\">citation benefit of publicly available research data</a>, has studied  <a href=\"http://www.plosone.org/article/info:doi/10.1371/journal.pone.0018657\">patterns in  data archiving</a>, <a href=\"https://peerj.com/preprints/1/\">patterns of data reuse</a>, and the <a href=\"http://researchremix.wordpress.com/2010/10/12/journalpolicyproposal\">impact of journal data sharing policies</a>.</p>\n" +
+    "                <p>\n" +
+    "                    Impactstory is <strong>Heather Piwowar</strong> (<a href=\"https://docs.google.com/document/d/1S7aKmG_l3wJxAc4lb5gJYMwNVDnAT7HlQWcaXADwA1s/edit?usp=sharing\">bio, </a>\n" +
+    "                    <a href=\"https://scholar.google.com/citations?user=1YLq0XMAAAAJ&hl=en\">publications, </a>\n" +
+    "                    <a href=\"https://twitter.com/researchremix\">Twitter</a>) and\n" +
     "\n" +
-    "                <p>Heather has a bachelor’s and master’s degree from MIT in electrical engineering, 10 years of experience as a software engineer, and a Ph.D. in Biomedical Informatics from the U of Pittsburgh.  She is an <a href=\"http://www.slideshare.net/hpiwowar\">frequent speaker</a> on research data archiving, writes a well-respected <a href=\"http://researchremix.wordpress.com\">research blog</a>, and is active on twitter (<a href=\"http://twitter.com/researchremix\">@researchremix</a>). </p>\n" +
+    "                    <strong>Jason Priem</strong> (<a href=\"https://docs.google.com/document/d/1SkUuOYrpfUF-LC7aC1sBa_phG-_qN-f3hkL9fMooTm4/edit?usp=sharing\">bio, </a>\n" +
+    "                    <a href=\"https://scholar.google.com/citations?user=w32jC0YAAAAJ&hl=en\">publications, </a>\n" +
+    "                    <a href=\"https://twitter.com/jasonpriem\">Twitter</a>).\n" +
+    "\n" +
+    "                </p>\n" +
+    "\n" +
+    "                <p>You can learn more about how we started working together in this recent Nature article, <a href=\"https://www.nature.com/articles/d41586-018-05968-3\">\"How Unpaywall is transforming open science.\"</a>\n" +
+    "                </p>\n" +
+    "                <p>\n" +
+    "                    If you'd like to get in touch, we'd love to hear from you. Drop us a line at <a href=\"mailto:team@impactstory.org\">team@impactstory.org</a>\n" +
+    "                </p>\n" +
+    "\n" +
     "            </div>\n" +
+    "\n" +
+    "\n" +
+    "                        <div class=\"img\">\n" +
+    "                <img class=\"team\" src=\"static/img/team.jpg\" alt=\"\">\n" +
+    "\n" +
+    "            </div>\n" +
+    "\n" +
     "        </div>\n" +
     "\n" +
-    "        <div class=\"person subsequent\">\n" +
-    "            <img src=\"https://pbs.twimg.com/profile_images/820790537456226304/Tis8dyhv_400x400.jpg\" height=100/>\n" +
-    "            <div class=\"text\">\n" +
-    "                <p><strong>Jason Priem</strong> is a cofounder of Impactstory and a doctoral student in information science (currently on leave of absence) at the University of North Carolina-Chapel Hill. Since <a href=\"https://twitter.com/jasonpriem/status/25844968813\">coining the term \"altmetrics,\"</a> he's remained active in the field, organizing the annual <a href=\"http:altmetrics.org/altmetrics12\">altmetrics workshops</a>, giving <a href=\"http://jasonpriem.org/cv/#invited\">invited talks</a>, and publishing <a href=\"http://jasonpriem.org/cv/#refereed\">peer-reviewed altmetrics research.</a></p>\n" +
     "\n" +
-    "                <p>Jason has contributed to and created several open-source software projects, including <a href=\"http://www.zotero.org\">Zotero</a> and <a href=\"http://feedvis.com\">Feedvis</a>, and has experience and training in art, design, and information visualisation.  Sometimes he writes on a <a href=\"http://jasonpriem.org/blog\">blog</a> and <a href=\"https://twitter.com/#!/jasonpriem\">tweets</a>.</p>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
     "\n" +
     "\n" +
     "\n" +
