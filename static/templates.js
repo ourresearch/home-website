@@ -287,7 +287,6 @@ angular.module("landing.tpl.html", []).run(["$templateCache", function($template
     "                Impactstory is a nonprofit dedicated to making scholarly research more\n" +
     "                open, accessible, and reusable. We create and support free services including\n" +
     "                <a href=\"https://unpaywall.org\">Unpaywall,</a>\n" +
-    "                <a href=\"https://unpaywall.org/data\">Unpaywall Data,</a>\n" +
     "                <a href=\"https://profiles.impactstory.org\">Impactstory Profiles,</a> and\n" +
     "                <a href=\"http://depsy.org\">Depsy.</a>\n" +
     "            </div>\n" +
