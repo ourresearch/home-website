@@ -79,6 +79,11 @@ body .main-view {
   display: flex;
   margin-bottom: 50px;
 }
+@media only screen and (max-width: 600px) {
+  .page.team .row {
+    flex-wrap: wrap;
+  }
+}
 .page.team .row div.img {
   margin: 0 20px 20px;
 }
