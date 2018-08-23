@@ -248,14 +248,6 @@ angular.module("header.tpl.html", []).run(["$templateCache", function($templateC
     "                  </md-menu-item>\n" +
     "\n" +
     "                  <md-menu-item>\n" +
-    "                      <a href=\"/about\" ng-click=\"menuClick()\">About</a>\n" +
-    "                  </md-menu-item>\n" +
-    "\n" +
-    "                  <md-menu-item>\n" +
-    "                      <a href=\"/press\" ng-click=\"menuClick()\">Press</a>\n" +
-    "                  </md-menu-item>\n" +
-    "\n" +
-    "                  <md-menu-item>\n" +
     "                      <a href=\"/team\" ng-click=\"menuClick()\">Team</a>\n" +
     "                  </md-menu-item>\n" +
     "\n" +
