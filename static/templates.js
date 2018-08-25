@@ -397,11 +397,31 @@ angular.module("team.tpl.html", []).run(["$templateCache", function($templateCac
     "        </div>\n" +
     "\n" +
     "\n" +
+    "        <h1>Funders</h1>\n" +
+    "        <p>Impactstory has received grant support from:</p>\n" +
+    "        <ul>\n" +
+    "            <li>The Open Society Foundations (2013)</li>\n" +
+    "            <li>\n" +
+    "                The Alfred P. Sloan Foundation\n" +
+    "                (<a href=\"http://blog.impactstory.org/20131290500/\">2012,</a>\n" +
+    "                <a href=\"http://blog.impactstory.org/sloan/\">2013,</a>\n" +
+    "                <a href=\"http://blog.impactstory.org/collaborating-635k-grant-improve-credit-research-software/\">2016</a>)\n" +
+    "            </li>\n" +
+    "            <li>\n" +
+    "                The National Science Foundation <a href=\"http://blog.impactstory.org/impactstory-awarded-300k-nsf-grant/\">(2014)</a>\n" +
+    "            </li>\n" +
+    "            <li>\n" +
+    "                Clarivate Analytics <a href=\"http://blog.impactstory.org/clarivate-partnership/\">(2017)</a>\n" +
+    "            </li>\n" +
+    "            <li>\n" +
+    "                Arcadia, a Charitable Fund of Lisbet Rausing and Peter Baldwin <a href=\"http://blog.impactstory.org/oa-search-engine/\">(2018)</a>\n" +
+    "            </li>\n" +
+    "        </ul>\n" +
     "\n" +
     "\n" +
     "\n" +
     "\n" +
-    "        <h2 id=\"board\">Board of directors</h2>\n" +
+    "        <h1 id=\"board\">Board of directors</h1>\n" +
     "\n" +
     "        <div class=\"person\">\n" +
     "            <!--\n" +

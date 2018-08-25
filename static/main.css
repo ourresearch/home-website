@@ -75,9 +75,11 @@ body .main-view {
   line-height: 1.4;
   font-size: 20px;
 }
+.page.team #board {
+  margin-top: 100px;
+}
 .page.team .row {
   display: flex;
-  margin-bottom: 50px;
 }
 @media only screen and (max-width: 600px) {
   .page.team .row {
@@ -85,10 +87,10 @@ body .main-view {
   }
 }
 .page.team .row div.img {
-  margin: 0 20px 20px;
+  margin: 0 0 0 20px;
 }
 .page.team .row div.img img {
-  max-width: 400px;
+  max-width: 500px;
 }
 .page.team .row div.text p {
   margin-top: 0;
