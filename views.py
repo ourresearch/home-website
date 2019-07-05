@@ -62,7 +62,7 @@ def index_endpoint(path="index", page=""):
         "about"
     ]
     if page.lower() in homepage_slugs:
-        url = u"https://our-research.org.impactstory.org/{}".format(page.strip())
+        url = u"https://our-research.org/{}".format(page.strip())
 
     else:
         url = u"https://profiles.impactstory.org/{}".format(page.strip())
