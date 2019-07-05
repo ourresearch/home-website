@@ -55,19 +55,20 @@ def do_before_request():
 @app.route("/")
 def index_endpoint(path="index", page=""):
 
-    url_slugs_to_stay_here = [
+    homepage_slugs = [
         "",
         "press",
         "team",
         "about"
     ]
-    if page.lower() not in url_slugs_to_stay_here:
-        return redirect(u"https://profiles.impactstory.org/{}".format(page.strip()), code=302)
+    if page.lower() in homepage_slugs:
+        url = u"https://our-research.org.impactstory.org/{}".format(page.strip())
 
+    else:
+        url = u"https://profiles.impactstory.org/{}".format(page.strip())
 
-    return render_template(
-        'index.html'
-    )
+    return redirect(url, code=302)
+
 
 
 @app.route("/log/install", methods=["POST"])
